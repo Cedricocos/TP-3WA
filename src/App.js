@@ -1,7 +1,7 @@
 import './App.css';
 
 import React from 'react';
-import Message from "./components/Message"
+import Header from "./components/Header"
 
 class App extends React.Component{
   constructor(props){
@@ -15,9 +15,8 @@ class App extends React.Component{
   render(){
 
     return(
-      <div className="App-header">
-        <p>Je suis App, {this.state.count}</p>
-        <Message />
+      <div>
+        <Header />
       </div>
     )
   }
