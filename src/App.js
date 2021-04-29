@@ -1,25 +1,23 @@
-import './App.css';
+import "./App.css";
 
-import React from 'react';
-import Message from "./components/Message"
+import React from "react";
+import Yam from "./components/Yam";
 
-class App extends React.Component{
-  constructor(props){
+class App extends React.Component {
+  constructor(props) {
     super(props);
 
     this.state = {
-      count: 10
-    }
+      count: 10,
+    };
   }
 
-  render(){
-
-    return(
+  render() {
+    return (
       <div className="App-header">
-        <p>Je suis App, {this.state.count}</p>
-        <Message />
+        <Yam />
       </div>
-    )
+    );
   }
 }
 
