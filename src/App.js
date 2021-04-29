@@ -1,25 +1,18 @@
 import './App.css';
 
 import React from 'react';
-import Header from "./components/Header"
+import Form from './components/Form'
 
 class App extends React.Component{
-  constructor(props){
-    super(props);
 
-    this.state = {
-      count: 10
-    }
-  }
-
-  render(){
-
-    return(
-      <div>
-        <Header />
-      </div>
-    )
-  }
+render(){
+  return(
+      <div className="container">
+          <Form />
+      </div> 
+  )
 }
+}
+
 
 export default App;
