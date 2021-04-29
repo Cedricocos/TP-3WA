@@ -9,7 +9,7 @@ class Yam extends React.Component {
     super(props);
     this.state = {
       value: "",
-      lancers: [],
+      lancers: JSON.parse(localStorage.getItem("data")) || [],
       message: "",
       pageYam: true,
       pageStat: false,
@@ -18,6 +18,7 @@ class Yam extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleClickStat = this.handleClickStat.bind(this);
     this.handleClickYam = this.handleClickYam.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   lance_des = () => {
@@ -62,6 +63,13 @@ class Yam extends React.Component {
     this.setState({ pageYam: false });
   }
 
+  reset() {
+    localStorage.setItem("data", []);
+    this.setState({
+      lancers: [],
+    });
+  }
+
   render() {
     const { lancers, message, pageYam } = this.state;
     if (pageYam) {
@@ -92,6 +100,9 @@ class Yam extends React.Component {
                       onChange={this.handleChange}
                     />
                   </div>
+                  <a className="btn btn-warning ml-2" onClick={this.reset}>
+                    Reset
+                  </a>
                 </div>
                 {message !== "" && <p>{message}</p>}
               </div>
