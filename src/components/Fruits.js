@@ -18,15 +18,21 @@ class Fruits extends Component{
     }
 
     changeApple(nb){
-        this.setState({ nbApple: nb});
+        if(nb>0){
+            this.setState({ nbApple: nb});
+        }
     }
 
     changeRaspberry(nb){
-        this.setState({ nbRaspberry: nb });
+        if(nb>0){
+            this.setState({ nbRaspberry: nb });
+        }
     }
 
     changeStrawberry(nb){
-        this.setState({ nbStrawberry: nb });
+        if(nb>0){
+            this.setState({ nbStrawberry: nb });
+        }
     }
 
     ajouterAuPanier() {
