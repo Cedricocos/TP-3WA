@@ -9,7 +9,7 @@ const ERROR_BASE = "Base non sélectionné";
 const EMPTY_STRING = ""
 const NO_BASE = "aucune base"
 
-export default class ContainerConvertiseur extends Component{
+export default class ContainerConvertisseur extends Component{
     constructor(props){
         super(props)
         this.state = {
@@ -127,7 +127,7 @@ export default class ContainerConvertiseur extends Component{
         const base = [2,3,7,10];
         return(
             <div className="container-fluid mt-5 bg-light text-center border rounded-lg">
-                <h1>Convertiseur</h1>
+                <h1>Convertisseur</h1>
                 <div className="container">
                     <label htmlFor="select">Base</label>
                         <select onChange={this.handleChoose} className="form-control" id="base">
