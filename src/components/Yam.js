@@ -64,9 +64,9 @@ class Yam extends React.Component {
   }
 
   reset() {
-    localStorage.setItem("data", []);
+    localStorage.setItem("data", JSON.stringify(""));
     this.setState({
-      lancers: [],
+      lancers: "",
     });
   }
 
@@ -105,7 +105,7 @@ class Yam extends React.Component {
                       <button
                         className="btn btn-warning ml-2"
                         onClick={this.reset}
-                        type="none"
+                        type="reset"
                       >
                         Reset
                       </button>
@@ -141,22 +141,31 @@ class Lancers extends React.Component {
       5: "five",
       6: "six",
     };
+    console.log(lancers);
     return (
       <div className="row">
-        <ul className="list-unstyled row">
-          {lancers.map((numbers, index) => {
-            numbers.sort();
-            return (
-              <li className="col-3" key={index}>
-                {numbers.map((number, index) => {
-                  return (
-                    <i key={index} class={`fas fa-dice-${dices[number]}`}></i>
-                  );
-                })}
-              </li>
-            );
-          })}
-        </ul>
+        <div>
+          {lancers.length > 0 && lancers != "" ? (
+            <ul className="list-unstyled row">
+              {lancers.map((numbers, index) => {
+                return (
+                  <li className="col-3" key={index}>
+                    {numbers.map((number, index) => {
+                      return (
+                        <i
+                          key={index}
+                          className={`fas fa-dice-${dices[number]}`}
+                        ></i>
+                      );
+                    })}
+                  </li>
+                );
+              })}
+            </ul>
+          ) : (
+            <ul></ul>
+          )}
+        </div>
       </div>
     );
   }
